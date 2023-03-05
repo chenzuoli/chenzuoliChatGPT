@@ -28,7 +28,10 @@ function App() {
     // fetch response to the api combining the chat log array of messages and seinding it as a message to localhost:3000 as a post
     const messages = chatLogNew.map((message) => message.message).join("\n");
 
-    const response = await fetch("https://express-demo-gamma.vercel.app/", {
+    //const response = await fetch("https://express-demo-gamma.vercel.app/", {
+    //const response = await fetch("https://chatapi-theta.vercel.app:3080", {
+    const response = await fetch("http://localhost:3080", {
+    //const response = await fetch("https://chatapi-chenzuoli709-163com.vercel.app/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -39,6 +42,7 @@ function App() {
       }),
     });
     const data = await response.json();
+    console.log('response: ' + data)
     setChatLog([...chatLogNew, { user: "gpt", message: `${data.message}` }]);
     var scrollToTheBottomChatLog =
       document.getElementsByClassName("chat-log")[0];
