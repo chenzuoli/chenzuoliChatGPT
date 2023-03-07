@@ -58,8 +58,8 @@ app.post("/", async (req, res) => {
 
   const response = await openai.createCompletion({
     model: "text-davinci-003",
-    //prompt: `${basePromptPrefix}\n\nStranger:${message}\n\nChenzuoli:`,
-    prompt: `${message}`,
+    prompt: `${basePromptPrefix}\n\nStranger:${message}\n\nChenzuoli:`,
+    //prompt: `${message}`,
     max_tokens: 256,
     temperature: 0.0,
     stop: '1',
