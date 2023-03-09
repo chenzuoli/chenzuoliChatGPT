@@ -1,3 +1,5 @@
+Skip to content
+
 const { Configuration, OpenAIApi } = require("openai");
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -15,7 +17,7 @@ const openai = new OpenAIApi(configuration);
 
 // Express Configuration
 const app = express();
-const port = 3080;
+const port = 80;
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -32,7 +34,7 @@ app.post("/", async (req, res) => {
       "bdxgbb5ob9tchx3ym7ujs9c7oex99mok8ivr",
       "https://api.operand.ai",
       {
-         [indexIDHeaderKey]: "hkd9o780woe8"
+         [indexIDHeaderKey]: "z1b0740cgerk"
       }
     );
 
@@ -59,12 +61,8 @@ app.post("/", async (req, res) => {
   const response = await openai.createCompletion({
     model: "text-davinci-003",
     prompt: `${basePromptPrefix}\n\nStranger:${message}\n\nChenzuoli:`,
-    //prompt: `${message}`,
     max_tokens: 256,
-    temperature: 0.0,
-    stop: '1',
-    frequency_penalty: 0.0,
-    presence_penalty: 0.0
+    temperature: 0.7,
   });
   res.json({
     message: response.data.choices[0].text,

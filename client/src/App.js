@@ -30,8 +30,8 @@ function App() {
 
     //const response = await fetch("https://express-demo-gamma.vercel.app/", {
     //const response = await fetch("https://chatapi-theta.vercel.app:3080", {
-    const response = await fetch("http://localhost:3080", {
-    //const response = await fetch("https://chatapi-chenzuoli709-163com.vercel.app/", {
+    //const response = await fetch("http://localhost:3080", {
+    const response = await fetch("https://chatapi-chenzuoli.vercel.app/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
