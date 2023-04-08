@@ -54,8 +54,9 @@ app.post("/", async (req, res) => {
   };
 
   let operandSearch = await runIndex(message);
+  console.log(operandSearch)
 
-  const basePromptPrefix = `This is a conversation between bloger Chenzuoli and a stranger.\nRelevant information that zuoli knows:\n${operandSearch}`;
+  const basePromptPrefix = `This is a conversation between bloger Chenzuoli and a stranger.\nRelevant information that zuoli knows:\n我的妻子是邓佳滢，一位文化行业从业者\n我的妻子很漂亮，她喜欢美食，爱好做饭，做得一手好菜，把她的老公拿捏\n我的兄弟是白璐，一位职业投资人\n${operandSearch}`;
 
   const response = await openai.createCompletion({
     model: "text-davinci-003",
